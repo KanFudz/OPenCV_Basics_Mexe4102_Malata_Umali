@@ -6,7 +6,7 @@
 ## Table of Contents
   - [I. Abstract](#i-abstract)
   - [II. Introduction](#ii-introduction)
-  - [III. Project Methods](#iii-project methods)
+  - [III. Project Methods](#iii-project-methods)
   - [IV. Conclusion](#iv-conclusion)
   - [V. Additional Materials](#iv-additional-materials)
   - [VIII. Refererences](#viii-references)
