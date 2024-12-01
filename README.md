@@ -1,4 +1,4 @@
-<h1 align="center">Extracting Contours for Shape Analysis</h1>
+<h1 align="center">Extracting Contours From Hand-drawn Drawings For Shape Analysis</h1>
 <h2 align="center">Final Requirement: Basic Open CV</h2>
 <h3 align="center">MExEE 402 - MExE Elective 2</h3>
 <br>
@@ -16,21 +16,39 @@
 
 
 ## I. Abstract
+- Summarize your project's objective, approach, and expected results.
+<br>
+<br>
 
 
 ## II. Introduction
+- Briefly describe the problem and its significance in computer vision.
+<br>
+<br>
 
 
 ## III. Project Methods
+- Provide a step-by-step explanation of your methodology in bulleted form.
+- Avoid paragraphs; focus on clarity and conciseness.
+<br>
+<br>
 
 
 ## IV. Conclusion
+- Summarize your findings, challenges, and outcomes.
+<br>
+<br>
 
 
 ## V. Additional Materials
+- Include code, images, and results generated during your project.
+<br>
+<br>
 
 
 ## VIII. Refererences
+<br>
+<br>
 
 
 ## IX. Group Members
