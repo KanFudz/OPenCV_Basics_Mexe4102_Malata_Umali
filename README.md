@@ -8,21 +8,29 @@
   - [II. Introduction](#ii-introduction)
   - [III. Project Methods](#iii-project-methods)
   - [IV. Conclusion](#iv-conclusion)
-  - [V. Additional Materials](#iv-additional-materials)
-  - [VIII. Refererences](#viii-references)
-  - [IX. Group Members](#ix-group-members)
+  - [V. Additional Materials](#v-additional-materials)
+  - [VI. References](#vi-references)
+  - [VII. Group Members](#vii-group-members)
 <hr> 
 <br>
 
 
 ## I. Abstract
-- Summarize your project's objective, approach, and expected results.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This project focuses on extracting contours from hand-drawn drawings to analyze and classify shapes with precision. Leveraging OpenCV, we preprocess the images through a series of techniques including grayscale conversion, noise reduction, and thresholding to prepare the images for effective contour detection. Once contours are detected, their geometric properties such as area, perimeter, and aspect ratio are analyzed to classify shapes accurately. The primary objective is to automate the identification and analysis of diverse shapes in hand-drawn images, addressing challenges like noise, irregularity, and varying line thickness. This project has broad applications, including document analysis, where it can help digitize handwritten materials, sketch recognition for artistic or educational purposes, and automated grading systems in learning environments. The integration of these methods not only showcases OpenCV's capabilities but also provides a robust approach to shape analysis in imperfect or non-standardized datasets.
 <br>
 <br>
 
 
 ## II. Introduction
-- Briefly describe the problem and its significance in computer vision.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This project is part of the MeXE 402 - Mechatronics Engineering Elective 2: Data Science and Machine Learning course final exam.
+- **Goal of the Project:** The primary goal of this project is to extract contours from hand-drawn images and perform a detailed analysis of the identified shapes using OpenCV tools. This process not only improves understanding of image processing techniques but also provides practical applications in real-world scenarios.
+- **Overview of OpenCV:** OpenCV (Open Source Computer Vision Library) is an open-source library of programming functions primarily aimed at real-time computer vision tasks. It provides a comprehensive suite of tools for image and video analysis, including object detection, image segmentation, and feature extraction.
+- **Significance of Shape Analysis:** Shape analysis is a fundamental problem in computer vision, with diverse applications such as object recognition, image segmentation, and graphics processing. Understanding shapes enables machines to interpret visual data effectively, making it crucial in areas like autonomous systems and digital graphics.
+- **Objective of the Project:**
+    - To address the challenges of extracting contours from hand-drawn images using OpenCV’s robust contour detection techniques.
+    - To apply these techniques to a curated dataset of hand-drawn images, isolating and analyzing contours to derive meaningful insights about the shapes present.
+
 <br>
 <br>
 
@@ -46,13 +54,14 @@
 <br>
 
 
-## VIII. Refererences
+
+## VI. References
 - https://www.kaggle.com/datasets/lachin007/drawaperson-handdrawn-sketches-by-children
 <br>
 <br>
 
 
-## IX. Group Members
+## VII. Group Members
 <div align="center">
 
 <table>
