@@ -208,7 +208,7 @@
     from google.colab.patches import cv2_imshow
     
     # Load the photo
-    image = cv2.imread("OPENCVPICS/7.jpg")
+    image = cv2.imread("OPENCVPICS/dbed.jpg")
     
     # Check if the image was loaded
     if image is None:
@@ -231,7 +231,7 @@
         # Display the image with the text
         cv2_imshow(image)
     ```
-    <img src="https://drive.google.com/uc?export=view&id=1kSQ1o9dJBN1IHT1-G34WpsgwdPm6S-Zs" width="600"/>
+    <img src="https://github.com/user-attachments/assets/f63f314e-cf7b-417d-9fbc-12d249f3c90b" width="600"/>
 
 
 8. **Isolating Objects by Color**
