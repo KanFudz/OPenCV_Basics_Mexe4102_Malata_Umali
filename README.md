@@ -92,24 +92,24 @@
   ```
 
 1. **Converting Images to Grayscale**
-    - Use the color space conversion code to convert RGB images to grayscale for basic image preprocessing.
-      ```python
-      import cv2
-      from google.colab.patches import cv2_imshow
+  - Use the color space conversion code to convert RGB images to grayscale for basic image preprocessing.
+     ```python
+     import cv2
+     from google.colab.patches import cv2_imshow
       
-      #colorful image - 3 channels
-      image = cv2.imread("OPENCVPICS/cat.jpg")
-      print(image.shape)
+     #colorful image - 3 channels
+     image = cv2.imread("OPENCVPICS/cat.jpg")
+     print(image.shape)
       
-      #grayscale image
-      gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-      print(gray.shape)
-      cv2_imshow(gray)
-      ```
-      <img src="https://drive.google.com/uc?export=view&id=116FACPAmeGTJJnXDbm5bFCNshqMdajiA" width="600"/>
+     #grayscale image
+     gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+     print(gray.shape)
+     cv2_imshow(gray)
+     ```
+     <img src="https://drive.google.com/uc?export=view&id=116FACPAmeGTJJnXDbm5bFCNshqMdajiA" width="600"/>
 
 2. **Visualizing Edge Detection**
-    - Apply the edge detection code to detect and visualize edges in a collection of object images.
+  - Apply the edge detection code to detect and visualize edges in a collection of object images.
     ```python
     import cv2
     from google.colab.patches import cv2_imshow
@@ -127,7 +127,7 @@
     
 
 3. **Demonstrating Morphological Erosion**
-    - Use the erosion code to show how an image's features shrink under different kernel sizes.
+  - Use the erosion code to show how an image's features shrink under different kernel sizes.
     ```python
     import cv2
     from google.colab.patches import cv2_imshow
@@ -146,7 +146,7 @@
 
 
 4. **Demonstrating Morphological Dilation**
-    - Apply the dilation code to illustrate how small gaps in features are filled.
+  - Apply the dilation code to illustrate how small gaps in features are filled.
     ```python
     import cv2
     from google.colab.patches import cv2_imshow
@@ -164,7 +164,7 @@
 
 
 5. **Reducing Noise in Photos**
-    - Use the denoising code to clean noisy images and compare the before-and-after effects.
+  - Use the denoising code to clean noisy images and compare the before-and-after effects.
     ```python
     import cv2
     from google.colab.patches import cv2_imshow
@@ -202,7 +202,7 @@
 
 
 7. **Adding Text to Images**
-    - Use the text overlay code to label images with captions, annotations, or titles.
+  - Use the text overlay code to label images with captions, annotations, or titles.
     ```python
     import cv2
     from google.colab.patches import cv2_imshow
@@ -235,7 +235,7 @@
 
 
 8. **Isolating Objects by Color**
-    - Apply the HSV thresholding code to extract and display objects of specific colors from an image.
+  - Apply the HSV thresholding code to extract and display objects of specific colors from an image.
     ```python
     import cv2
     import numpy as np
@@ -273,7 +273,7 @@
 
 
 9. **Detecting Faces in Group Photos**
-    - Use the face detection code to identify and highlight faces in group pictures.
+  - Use the face detection code to identify and highlight faces in group pictures.
     ```python
     import cv2
     from google.colab.patches import cv2_imshow
@@ -294,7 +294,7 @@
 
 
 10. **Outlining Shapes with Contours**
-    - Apply the contour detection code to outline and highlight shapes in simple object images.
+  - Apply the contour detection code to outline and highlight shapes in simple object images.
     ```python
     import cv2
     import numpy as np
@@ -327,16 +327,17 @@
         cv2.drawContours(img,[cnt],0,(255,255,0),3)
     cv2_imshow(img)
     ```
-    We found a square
-    We have a hexagon here
-    We found a triangle
-    We found a circle
-    We found a square
+    We found a square <br>
+    We have a hexagon here <br>
+    We found a triangle <br>
+    We found a circle <br>
+    We found a square <br>
+
     <img src="https://drive.google.com/uc?export=view&id=11tuzDc8-Ia-wA0tN_8r1a63WcM2q2K48" width="600"/>
 
 
 11. **Tracking a Ball in a Video**
-    - Use the HSV-based object detection code to track a colored ball in a recorded video.
+  - Use the HSV-based object detection code to track a colored ball in a recorded video.
     ```python
     import cv2
     import numpy as np
@@ -396,7 +397,7 @@
 
 
 12. **Highlighting Detected Faces**
-    - Apply the Haar cascade face detection code to identify and highlight multiple faces in family or crowd photos.
+  - Apply the Haar cascade face detection code to identify and highlight multiple faces in family or crowd photos.
 
     ```python
     !pip install face_recognition
@@ -686,8 +687,171 @@
     ```
     <img src="https://drive.google.com/uc?export=view&id=1SV80iZpNZMVhtp_8N--2AnfVrr3-XtSS" width="600"/>
 
+13. **Extracting Contours for Shape Analysis**
+  - Use contour detection to analyze and outline geometric shapes in car images.
+    
+    ```python
+    import cv2
+    from google.colab.patches import cv2_imshow
+    import numpy as np
+    
+    # Read the input image
+    image = cv2.imread("OPENCVPICS/HANDDRAWN.png")
+    
+    # Convert to grayscale
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
+    # Apply edge detection
+    edges = cv2.Canny(gray, 50, 150)
+    
+    # Find contours
+    contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
+    # Create a copy of the original image to draw contours
+    contour_image = image.copy()
+    
+    # Draw the contours on the image
+    cv2.drawContours(contour_image, contours, -1, (0, 255, 0), 2)
+    
+    # Analyze each contour and approximate the shape
+    for contour in contours:
+        # Approximate the contour
+        epsilon = 0.02 * cv2.arcLength(contour, True)
+        approx = cv2.approxPolyDP(contour, epsilon, True)
+    
+        # Find the bounding rectangle to label the shape
+        x, y, w, h = cv2.boundingRect(approx)
+    
+        # Determine the shape based on the number of vertices
+        if len(approx) == 3:
+            shape = "Triangle"
+        elif len(approx) == 4:
+            # Check if the shape is square or rectangle
+            aspect_ratio = float(w) / h
+            shape = "Square" if 0.95 <= aspect_ratio <= 1.05 else "Rectangle"
+        elif len(approx) > 4:
+            shape = "Circle"
+        else:
+            shape = "Polygon"
+    
+        # Put the name of the shape on the image
+        cv2.putText(contour_image, shape, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
+    
+    # Stack the original, edge-detected, and contour images for display
+    stacked_result = np.hstack((cv2.resize(image, (300, 300)),
+                                cv2.resize(cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR), (300, 300)),
+                                cv2.resize(contour_image, (300, 300))))
+    
+    # Display the results
+    cv2_imshow(stacked_result)
+    ```
+    <img src="https://github.com/user-attachments/assets/4263b74f-b886-4242-8a40-d25d33a325a4" width="800"/>
 
-14. **Extracting Contours for Shape Analysis**
+
+14. **Applying Image Blurring Techniques**
+  - Demonstrate various image blurring methods (Gaussian blur, median blur) to soften details in an image.
+    ```python
+    import cv2
+    from google.colab.patches import cv2_imshow
+    import numpy as np
+    
+    image = cv2.imread("OPENCVPICS/jr.jpg")
+    Gaussian = cv2.GaussianBlur(image,(7,7),0)
+    Median = cv2.medianBlur(image,5)
+    
+    display = np.hstack((Gaussian,Median))
+    cv2_imshow(display)
+    ```
+    <img src="https://drive.google.com/uc?export=view&id=1qRPx8LXWMavVIGXlkbgqNMfnCkY_0wr5" width="800"/>
+
+
+15. **Segmenting Images Based on Contours**
+  - Use contour detection to separate different sections of an image, like dividing a painting into its distinct elements.
+    ```python
+    import cv2
+    from google.colab.patches import cv2_imshow
+    import numpy as np
+    
+    # Read the input image
+    image = cv2.imread("OPENCVPICS/contour.jpg")
+    
+    # Convert to grayscale
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    
+    # Apply binary thresholding
+    _, threshold = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY_INV)
+    
+    # Find contours
+    contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
+    # Create a blank mask for segmentation
+    segmented_image = np.zeros_like(image)
+    
+    # Loop through each contour to extract and display segmented areas
+    for i, contour in enumerate(contours):
+        # Create a mask for the current contour
+        mask = np.zeros_like(gray)
+        cv2.drawContours(mask, [contour], -1, 255, -1)
+    
+        # Extract the segment by masking the original image
+        segmented_part = cv2.bitwise_and(image, image, mask=mask)
+    
+        # Add the segment to the segmented image
+        segmented_image = cv2.add(segmented_image, segmented_part)
+    
+        # Optionally draw bounding boxes for visualization
+        x, y, w, h = cv2.boundingRect(contour)
+        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
+    
+    
+    # Display results
+    cv2_imshow(image)  # Original image with bounding boxes
+    cv2_imshow(segmented_image)  # Segmented image
+    ```
+    <img src="https://drive.google.com/uc?export=view&id=1LsMLpS0xF21Anb1w3X_znJcw5_50ph3V" width="800"/>
+
+
+16. **Combining Erosion and Dilation for Feature Refinement**
+  - Apply erosion followed by dilation on an image to refine and smooth out small features.
+    ```python
+    import cv2
+    from google.colab.patches import cv2_imshow
+    import numpy as np
+    
+    image = cv2.imread("OPENCVPICS/as.jpg")
+    gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+    canny_image = cv2.Canny(gray,150, 200)
+    kernel = np.ones((1,1), np.uint8)
+    erode_image = cv2.erode(canny_image,kernel, iterations=1)
+    kernel1 = np.ones((3,3), np.uint8)
+    dilate_image = cv2.dilate(erode_image, kernel1, iterations=1)
+    
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    cv2.putText(canny_image, 'Canny Image', (10, 30), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
+    cv2.putText(erode_image, 'Eroded', (10, 30), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
+    cv2.putText(dilate_image, 'Feature Refined', (10, 30), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
+    
+    display = np.hstack((canny_image,erode_image,dilate_image))
+    cv2_imshow(display)
+    ```
+    <img src="https://drive.google.com/uc?export=view&id=1rNlKAYkNzsi_Oy-qbq9xempAnRtAU22l" width="800"/>
+
+<br>
+
+
+### Part 2: Revised Topic of Basic OpenCV
+- Topic: Extracting Contours for Shape Analysis
+    - Use contour detection to analyze and outline geometric shapes in hand-drawn images.
+- Revised Topic: Extracting Contours for Shape Analysis in Car Images
+    - Use contour detection to analyze and outline geometric shapes in car images.
+
+    ```python
+    !git clone https://github.com/KanFudz/OpenCV_Finals_Mexe4102_JohnReiR.Malata_ArianeMaeD.Umali.git
+    %cd OpenCV_Finals_Mexe4102_JohnReiR.Malata_ArianeMaeD.Umali
+    from IPython.display import clear_output
+    clear_output()
+    ```
+13. **Extracting Contours for Shape Analysis**
     - Use contour detection to analyze and outline geometric shapes in hand-drawn images.
     ```python
     import cv2
@@ -863,170 +1027,6 @@
     <img src="https://drive.google.com/uc?export=view&id=1aiF8HKd8hq4IOSw23P87ZhdtGGF04YnX" width="800"/>
 
 
-15. **Applying Image Blurring Techniques**
-    - Demonstrate various image blurring methods (Gaussian blur, median blur) to soften details in an image.
-    ```python
-    import cv2
-    from google.colab.patches import cv2_imshow
-    import numpy as np
-    
-    image = cv2.imread("OPENCVPICS/jr.jpg")
-    Gaussian = cv2.GaussianBlur(image,(7,7),0)
-    Median = cv2.medianBlur(image,5)
-    
-    display = np.hstack((Gaussian,Median))
-    cv2_imshow(display)
-    ```
-    <img src="https://drive.google.com/uc?export=view&id=1qRPx8LXWMavVIGXlkbgqNMfnCkY_0wr5" width="800"/>
-
-
-16. **Segmenting Images Based on Contours**
-    - Use contour detection to separate different sections of an image, like dividing a painting into its distinct elements.
-    ```python
-    import cv2
-    from google.colab.patches import cv2_imshow
-    import numpy as np
-    
-    # Read the input image
-    image = cv2.imread("OPENCVPICS/contour.jpg")
-    
-    # Convert to grayscale
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    
-    # Apply binary thresholding
-    _, threshold = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY_INV)
-    
-    # Find contours
-    contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-    
-    # Create a blank mask for segmentation
-    segmented_image = np.zeros_like(image)
-    
-    # Loop through each contour to extract and display segmented areas
-    for i, contour in enumerate(contours):
-        # Create a mask for the current contour
-        mask = np.zeros_like(gray)
-        cv2.drawContours(mask, [contour], -1, 255, -1)
-    
-        # Extract the segment by masking the original image
-        segmented_part = cv2.bitwise_and(image, image, mask=mask)
-    
-        # Add the segment to the segmented image
-        segmented_image = cv2.add(segmented_image, segmented_part)
-    
-        # Optionally draw bounding boxes for visualization
-        x, y, w, h = cv2.boundingRect(contour)
-        cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
-    
-    
-    # Display results
-    cv2_imshow(image)  # Original image with bounding boxes
-    cv2_imshow(segmented_image)  # Segmented image
-    ```
-    <img src="https://drive.google.com/uc?export=view&id=1LsMLpS0xF21Anb1w3X_znJcw5_50ph3V" width="800"/>
-
-
-17. **Combining Erosion and Dilation for Feature Refinement**
-    - Apply erosion followed by dilation on an image to refine and smooth out small features.
-    ```python
-    import cv2
-    from google.colab.patches import cv2_imshow
-    import numpy as np
-    
-    image = cv2.imread("OPENCVPICS/as.jpg")
-    gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-    canny_image = cv2.Canny(gray,150, 200)
-    kernel = np.ones((1,1), np.uint8)
-    erode_image = cv2.erode(canny_image,kernel, iterations=1)
-    kernel1 = np.ones((3,3), np.uint8)
-    dilate_image = cv2.dilate(erode_image, kernel1, iterations=1)
-    
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(canny_image, 'Canny Image', (10, 30), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
-    cv2.putText(erode_image, 'Eroded', (10, 30), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
-    cv2.putText(dilate_image, 'Feature Refined', (10, 30), font, 1, (255, 255, 255), 2, cv2.LINE_AA)
-    
-    display = np.hstack((canny_image,erode_image,dilate_image))
-    cv2_imshow(display)
-    ```
-    <img src="https://drive.google.com/uc?export=view&id=1rNlKAYkNzsi_Oy-qbq9xempAnRtAU22l" width="800"/>
-
-<br>
-
-
-### Part 2: Revised Topic of Basic OpenCV
-- Topic: Extracting Contours for Shape Analysis
-    - Use contour detection to analyze and outline geometric shapes in hand-drawn images.
-- Revised Topic: Extracting Contours for Shape Analysis in Car Images
-    - Use contour detection to analyze and outline geometric shapes in car images.
-
-    ```python
-    !git clone https://github.com/KanFudz/OpenCV_Finals_Mexe4102_JohnReiR.Malata_ArianeMaeD.Umali.git
-    %cd OpenCV_Finals_Mexe4102_JohnReiR.Malata_ArianeMaeD.Umali
-    from IPython.display import clear_output
-    clear_output()
-    ```
-
-
-**13. Extracting Contours for Shape Analysis**
-    - Use contour detection to analyze and outline geometric shapes in car images.
-    
-```python
-import cv2
-from google.colab.patches import cv2_imshow
-import numpy as np
-
-# Read the input image
-image = cv2.imread("OPENCVPICS/HANDDRAWN.png")
-
-# Convert to grayscale
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# Apply edge detection
-edges = cv2.Canny(gray, 50, 150)
-
-# Find contours
-contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-# Create a copy of the original image to draw contours
-contour_image = image.copy()
-
-# Draw the contours on the image
-cv2.drawContours(contour_image, contours, -1, (0, 255, 0), 2)
-
-# Analyze each contour and approximate the shape
-for contour in contours:
-    # Approximate the contour
-    epsilon = 0.02 * cv2.arcLength(contour, True)
-    approx = cv2.approxPolyDP(contour, epsilon, True)
-
-    # Find the bounding rectangle to label the shape
-    x, y, w, h = cv2.boundingRect(approx)
-
-    # Determine the shape based on the number of vertices
-    if len(approx) == 3:
-        shape = "Triangle"
-    elif len(approx) == 4:
-        # Check if the shape is square or rectangle
-        aspect_ratio = float(w) / h
-        shape = "Square" if 0.95 <= aspect_ratio <= 1.05 else "Rectangle"
-    elif len(approx) > 4:
-        shape = "Circle"
-    else:
-        shape = "Polygon"
-
-    # Put the name of the shape on the image
-    cv2.putText(contour_image, shape, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
-
-# Stack the original, edge-detected, and contour images for display
-stacked_result = np.hstack((cv2.resize(image, (300, 300)),
-                            cv2.resize(cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR), (300, 300)),
-                            cv2.resize(contour_image, (300, 300))))
-
-# Display the results
-cv2_imshow(stacked_result)
-```
-<img src="![HADDRAWN](https://github.com/user-attachments/assets/4263b74f-b886-4242-8a40-d25d33a325a4)" width="800"/>
 
 <br>
 <br>
