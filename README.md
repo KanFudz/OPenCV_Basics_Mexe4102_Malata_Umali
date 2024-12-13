@@ -17,7 +17,11 @@
 
 ## I. Abstract
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This project focuses on extracting contours from hand-drawn drawings to analyze and classify shapes with precision. Leveraging OpenCV, we preprocess the images through a series of techniques including grayscale conversion, noise reduction, and thresholding to prepare the images for effective contour detection. Once contours are detected, their geometric properties such as area, perimeter, and aspect ratio are analyzed to classify shapes accurately. The primary objective is to automate the identification and analysis of diverse shapes in hand-drawn images, addressing challenges like noise, irregularity, and varying line thickness. This project has broad applications, including document analysis, where it can help digitize handwritten materials, sketch recognition for artistic or educational purposes, and automated grading systems in learning environments. The integration of these methods not only showcases OpenCV's capabilities but also provides a robust approach to shape analysis in imperfect or non-standardized datasets.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This project focuses on extracting contours from car images and analyzing their geometric features using OpenCV. Contour detection is a critical technique in computer vision that enables precise identification and analysis of object boundaries. By leveraging edge detection and contour extraction methods, the project addresses key challenges such as noisy backgrounds, inconsistent lighting, and varying image quality in car datasets.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The project approach involves preprocessing car images to enhance clarity, applying advanced contour detection algorithms to isolate object shapes, and performing detailed shape analysis to extract valuable geometric features. These features include properties such as perimeter, area, and bounding rectangles, which can be used in applications like vehicle recognition, design evaluation, and structural analysis.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The expected results include improved preprocessing pipelines, accurate contour identification, and enhanced understanding of vehicle shapes through visualization techniques. This project underscores the practical importance of shape analysis in real-world applications, particularly in autonomous driving systems, traffic monitoring, and digital design workflows.
 <br>
 <br>
 
