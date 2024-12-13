@@ -21,7 +21,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The project approach involves preprocessing car images to enhance clarity, applying advanced contour detection algorithms to isolate object shapes, and performing detailed shape analysis to extract valuable geometric features. These features include properties such as perimeter, area, and bounding rectangles, which can be used in applications like vehicle recognition, design evaluation, and structural analysis.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The expected results include improved preprocessing pipelines, accurate contour identification, and enhanced understanding of vehicle shapes through visualization techniques. This project underscores the practical importance of shape analysis in real-world applications, particularly in autonomous driving systems, traffic monitoring, and digital design workflows.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The expected results include improved preprocessing pipelines to handle image noise and inconsistencies, highly accurate contour identification for isolating car shapes, and a comprehensive understanding of vehicle geometries through advanced visualization techniques.
 <br>
 <br>
 
