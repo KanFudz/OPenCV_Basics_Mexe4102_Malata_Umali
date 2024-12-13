@@ -977,7 +977,7 @@ from google.colab.patches import cv2_imshow
 import numpy as np
 
 # Read the input image
-image = cv2.imread("DATASET/audi/9.jpg")
+image = cv2.imread("OPENCVPICS/HANDDRAWN.png")
 
 # Convert to grayscale
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -1026,123 +1026,7 @@ stacked_result = np.hstack((cv2.resize(image, (300, 300)),
 # Display the results
 cv2_imshow(stacked_result)
 ```
-<img src="https://drive.google.com/uc?export=view&id=1ItobQbMFHJn-hHjumVUb9mDMW1TO0wV_" width="800"/>
-
-
-```python
-import cv2
-from google.colab.patches import cv2_imshow
-import numpy as np
-
-# Read the input image
-image = cv2.imread("DATASET/mercedes/6.jpg")
-
-# Convert to grayscale
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# Apply edge detection
-edges = cv2.Canny(gray, 50, 150)
-
-# Find contours
-contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-# Create a copy of the original image to draw contours
-contour_image = image.copy()
-
-# Draw the contours on the image
-cv2.drawContours(contour_image, contours, -1, (0, 255, 0), 2)
-
-# Analyze each contour and approximate the shape
-for contour in contours:
-    # Approximate the contour
-    epsilon = 0.02 * cv2.arcLength(contour, True)
-    approx = cv2.approxPolyDP(contour, epsilon, True)
-
-    # Find the bounding rectangle to label the shape
-    x, y, w, h = cv2.boundingRect(approx)
-
-    # Determine the shape based on the number of vertices
-    if len(approx) == 3:
-        shape = "Triangle"
-    elif len(approx) == 4:
-        # Check if the shape is square or rectangle
-        aspect_ratio = float(w) / h
-        shape = "Square" if 0.95 <= aspect_ratio <= 1.05 else "Rectangle"
-    elif len(approx) > 4:
-        shape = "Circle"
-    else:
-        shape = "Polygon"
-
-    # Put the name of the shape on the image
-    cv2.putText(contour_image, shape, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
-
-# Stack the original, edge-detected, and contour images for display
-stacked_result = np.hstack((cv2.resize(image, (300, 300)),
-                            cv2.resize(cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR), (300, 300)),
-                            cv2.resize(contour_image, (300, 300))))
-
-# Display the results
-cv2_imshow(stacked_result)
-```
-<img src="https://drive.google.com/uc?export=view&id=1h44y8wtT0hHC2zqTyMWYJn8E7ozzMm2B" width="800"/>
-
-
-```python
-import cv2
-from google.colab.patches import cv2_imshow
-import numpy as np
-
-# Read the input image
-image = cv2.imread("DATASET/lamborghini/4.jpg")
-
-# Convert to grayscale
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# Apply edge detection
-edges = cv2.Canny(gray, 50, 150)
-
-# Find contours
-contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-# Create a copy of the original image to draw contours
-contour_image = image.copy()
-
-# Draw the contours on the image
-cv2.drawContours(contour_image, contours, -1, (0, 255, 0), 2)
-
-# Analyze each contour and approximate the shape
-for contour in contours:
-    # Approximate the contour
-    epsilon = 0.02 * cv2.arcLength(contour, True)
-    approx = cv2.approxPolyDP(contour, epsilon, True)
-
-    # Find the bounding rectangle to label the shape
-    x, y, w, h = cv2.boundingRect(approx)
-
-    # Determine the shape based on the number of vertices
-    if len(approx) == 3:
-        shape = "Triangle"
-    elif len(approx) == 4:
-        # Check if the shape is square or rectangle
-        aspect_ratio = float(w) / h
-        shape = "Square" if 0.95 <= aspect_ratio <= 1.05 else "Rectangle"
-    elif len(approx) > 4:
-        shape = "Circle"
-    else:
-        shape = "Polygon"
-
-    # Put the name of the shape on the image
-    cv2.putText(contour_image, shape, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
-
-# Stack the original, edge-detected, and contour images for display
-stacked_result = np.hstack((cv2.resize(image, (300, 300)),
-                            cv2.resize(cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR), (300, 300)),
-                            cv2.resize(contour_image, (300, 300))))
-
-# Display the results
-cv2_imshow(stacked_result)
-```
-<img src="https://drive.google.com/uc?export=view&id=1OtYd9fWvFS1BXXXu5U2nn1sWt_gTi7yp" width="800"/>
+<img src="![HADDRAWN](https://github.com/user-attachments/assets/4263b74f-b886-4242-8a40-d25d33a325a4)" width="800"/>
 
 <br>
 <br>
