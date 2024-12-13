@@ -47,20 +47,44 @@
 
 
 ## III. Project Methods
-- Provide a step-by-step explanation of your methodology in bulleted form.
-- Avoid paragraphs; focus on clarity and conciseness.
+- **Dataset Preparation:**
+    - Collect a dataset of car images from reliable online sources.
+    - Preprocess the images by resizing, normalizing, and converting them to grayscale for consistency.
+- **Contour Detection:**
+    - Apply edge detection methods, such as Canny Edge Detection, to identify potential edges in the car images.
+    - Use OpenCV's `findContours` function to extract contours from the processed images.
+- **Shape Analysis:**
+    - Analyze the extracted contours to identify and classify geometric features of the cars.
+    - Calculate properties such as perimeter, area, and bounding rectangles to gather detailed shape information.
+- **Visualization:**
+    - Overlay the detected contours on the original images for visual representation.
+    - Display the results using OpenCV's `imshow` function or save the processed images for documentation.
+  
 <br>
 <br>
 
 
 ## IV. Conclusion
-- Summarize your findings, challenges, and outcomes.
+- This project demonstrated the application of contour detection techniques in analyzing car images.
+- Key findings include:
+    - Effective preprocessing significantly enhances contour detection accuracy.
+    - Challenges such as noisy backgrounds and inconsistent lighting were addressed through robust image preprocessing techniques.
+    - The extracted contours provide valuable insights into the structural features of vehicles, supporting applications like automated vehicle recognition.
+- Challenges faced:
+    - Variability in image quality and lighting conditions.
+    - Fine-tuning the edge detection thresholds for optimal results.
+- Outcomes:
+    - Successfully extracted and analyzed contours from car images.
+    - Highlighted the importance of preprocessing in achieving high-quality results.
+
 <br>
 <br>
 
 
 ## V. Additional Materials
 - Include code, images, and results generated during your project.
+
+
 <br>
 <br>
 
