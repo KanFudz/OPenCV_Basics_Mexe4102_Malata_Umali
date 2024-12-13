@@ -82,8 +82,97 @@
 
 
 ## V. Additional Materials
-- Include code, images, and results generated during your project.
 
+### Part 1: 16 Basic OpenCV Projects
+  ```python
+  !git clone https://github.com/KanFudz/OpenCV_Finals_Mexe4102_JohnReiR.Malata_ArianeMaeD.Umali.git
+  %cd OpenCV_Finals_Mexe4102_JohnReiR.Malata_ArianeMaeD.Umali
+  from IPython.display import clear_output
+  clear_output()
+  ```
+
+1. **Converting Images to Grayscale**
+    - Use the color space conversion code to convert RGB images to grayscale for basic image preprocessing.
+      ```python
+      import cv2
+      from google.colab.patches import cv2_imshow
+      
+      #colorful image - 3 channels
+      image = cv2.imread("OPENCVPICS/cat.jpg")
+      print(image.shape)
+      
+      #grayscale image
+      gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+      print(gray.shape)
+      cv2_imshow(gray)
+      ```
+
+2. **Visualizing Edge Detection**
+    - Apply the edge detection code to detect and visualize edges in a collection of object images.
+
+
+3. **Demonstrating Morphological Erosion**
+    - Use the erosion code to show how an image's features shrink under different kernel sizes.
+
+
+4. **Demonstrating Morphological Dilation**
+    - Apply the dilation code to illustrate how small gaps in features are filled.
+
+
+5. **Reducing Noise in Photos**
+    - Use the denoising code to clean noisy images and compare the before-and-after effects.
+
+
+6. **Drawing Geometric Shapes on Images**
+- Apply the shape-drawing code to overlay circles, rectangles, and lines on sample photos.
+
+
+7. **Adding Text to Images**
+    - Use the text overlay code to label images with captions, annotations, or titles.
+
+
+8. **Isolating Objects by Color**
+    - Apply the HSV thresholding code to extract and display objects of specific colors from an image.
+
+
+9. **Detecting Faces in Group Photos**
+    - Use the face detection code to identify and highlight faces in group pictures.
+
+
+10. **Outlining Shapes with Contours**
+    - Apply the contour detection code to outline and highlight shapes in simple object images.
+
+
+11. **Tracking a Ball in a Video**
+    - Use the HSV-based object detection code to track a colored ball in a recorded video.
+
+
+12. **Highlighting Detected Faces**
+    - Apply the Haar cascade face detection code to identify and highlight multiple faces in family or crowd photos.
+
+
+13. **Extracting Contours for Shape Analysis**
+    - Use contour detection to analyze and outline geometric shapes in hand-drawn images.
+
+
+14. **Applying Image Blurring Techniques**
+    - Demonstrate various image blurring methods (Gaussian blur, median blur) to soften details in an image.
+
+
+15. **Segmenting Images Based on Contours**
+    - Use contour detection to separate different sections of an image, like dividing a painting into its distinct elements.
+
+
+16. **Combining Erosion and Dilation for Feature Refinement**
+    - Apply erosion followed by dilation on an image to refine and smooth out small features.
+
+<br>
+
+### Part 2: Revised Topic of Basic OpenCV
+- Topic: Extracting Contours for Shape Analysis
+    - Use contour detection to analyze and outline geometric shapes in hand-drawn images.
+- Revised Topic: Extracting Contours for Shape Analysis in Car Images
+    - Use contour detection to analyze and outline geometric shapes in car images.
 
 <br>
 <br>
