@@ -1035,6 +1035,14 @@
 
 ## VI. References
 - https://www.kaggle.com/datasets/lachin007/drawaperson-handdrawn-sketches-by-children
+- https://www.pexels.com/photo/brown-tabby-cat-2071882/
+- https://myenglishgrammar.com/wp-content/uploads/2023/10/objects-group.png
+- https://miro.medium.com/v2/resize:fit:1100/format:webp/0*nfqCa_X1oL66h-kG
+- https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiNtiSPQ9EGnKivtoQvvUpHOEuRxedjpAQFw&s
+- https://www.facebook.com/photo.php?fbid=558271683638013&id=100083655572387&set=a.242669278531590
+- https://images.app.goo.gl/7eni9PwEggrc5Jxf7
+- https://www.erinhanson.com/content/inventoryimages/Erin-Hanson-Cypress-Mosaic-.jpg
+- https://youtu.be/E3Lg4aZVCAU?si=_UT8JlruRT_q7wi1
 <br>
 <br>
 
