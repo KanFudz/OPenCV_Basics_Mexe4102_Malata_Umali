@@ -397,6 +397,46 @@
 
 12. **Highlighting Detected Faces**
     - Apply the Haar cascade face detection code to identify and highlight multiple faces in family or crowd photos.
+
+    ```python
+    !pip install face_recognition
+    ```
+
+
+    ```python
+    import face_recognition
+    import numpy as np
+    from google.colab.patches import cv2_imshow
+    import cv2
+    
+    # Creating the encoding profiles
+    face_1 = face_recognition.load_image_file("OPENCVFACES/angel1.jpg")
+    face_1_encoding = face_recognition.face_encodings(face_1)[0]
+    
+    face_2 = face_recognition.load_image_file("OPENCVFACES/ari1.jpg")
+    face_2_encoding = face_recognition.face_encodings(face_2)[0]
+    
+    face_3 = face_recognition.load_image_file("OPENCVFACES/jr1.jpg")
+    face_3_encoding = face_recognition.face_encodings(face_3)[0]
+    
+    face_4 = face_recognition.load_image_file("OPENCVFACES/step1.jpg")
+    face_4_encoding = face_recognition.face_encodings(face_4)[0]
+    
+    known_face_encodings = [
+                            face_1_encoding,
+                            face_2_encoding,
+                            face_3_encoding,
+                            face_4_encoding
+    ]
+    
+    known_face_names = [
+                        "Angel",
+                        "Ariane",
+                        "John Rei",
+                        "Stephen"
+    ```
+    
+
     ```python
     file_name = "OPENCVFACES/maris1.jpg"
     unknown_image = face_recognition.load_image_file(file_name)
@@ -647,7 +687,7 @@
     <img src="https://drive.google.com/uc?export=view&id=1SV80iZpNZMVhtp_8N--2AnfVrr3-XtSS" width="600"/>
 
 
-13. **Extracting Contours for Shape Analysis**
+14. **Extracting Contours for Shape Analysis**
     - Use contour detection to analyze and outline geometric shapes in hand-drawn images.
     ```python
     import cv2
@@ -823,7 +863,7 @@
     <img src="https://drive.google.com/uc?export=view&id=1aiF8HKd8hq4IOSw23P87ZhdtGGF04YnX" width="800"/>
 
 
-14. **Applying Image Blurring Techniques**
+15. **Applying Image Blurring Techniques**
     - Demonstrate various image blurring methods (Gaussian blur, median blur) to soften details in an image.
     ```python
     import cv2
@@ -840,7 +880,7 @@
     <img src="https://drive.google.com/uc?export=view&id=1qRPx8LXWMavVIGXlkbgqNMfnCkY_0wr5" width="800"/>
 
 
-15. **Segmenting Images Based on Contours**
+16. **Segmenting Images Based on Contours**
     - Use contour detection to separate different sections of an image, like dividing a painting into its distinct elements.
     ```python
     import cv2
@@ -886,7 +926,7 @@
     <img src="https://drive.google.com/uc?export=view&id=1LsMLpS0xF21Anb1w3X_znJcw5_50ph3V" width="800"/>
 
 
-16. **Combining Erosion and Dilation for Feature Refinement**
+17. **Combining Erosion and Dilation for Feature Refinement**
     - Apply erosion followed by dilation on an image to refine and smooth out small features.
     ```python
     import cv2
