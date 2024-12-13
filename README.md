@@ -510,8 +510,7 @@
     
     cv2_imshow(unknown_image_to_draw)
     ```
-    <img src="https://drive.google.com/uc?export=view&id=1OthLbfGitUFDdZWcgAEsxq24U098ZI2s" width="600"/>
-
+    img src="https://drive.google.com/uc?export=view&id=13QT69Whg4jcRSqpsbeO5TbkZjLwKryS0" width="600"/>
 
     ```python
     file_name = "OPENCVFACES/jr3.jpg"
@@ -687,6 +686,7 @@
     ```
     <img src="https://drive.google.com/uc?export=view&id=1SV80iZpNZMVhtp_8N--2AnfVrr3-XtSS" width="600"/>
 
+    
 13. **Extracting Contours for Shape Analysis**
   - Use contour detection to analyze and outline geometric shapes in car images.
     
