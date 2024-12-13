@@ -16,19 +16,22 @@
 
 
 ## I. Abstract
-
+<div align="justify">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This project focuses on extracting contours from car images and analyzing their geometric features using OpenCV. Contour detection is a critical technique in computer vision that enables precise identification and analysis of object boundaries. By leveraging edge detection and contour extraction methods, the project addresses key challenges such as noisy backgrounds, inconsistent lighting, and varying image quality in car datasets.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The project approach involves preprocessing car images to enhance clarity, applying advanced contour detection algorithms to isolate object shapes, and performing detailed shape analysis to extract valuable geometric features. These features include properties such as perimeter, area, and bounding rectangles, which can be used in applications like vehicle recognition, design evaluation, and structural analysis.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The expected results include improved preprocessing pipelines to handle image noise and inconsistencies, highly accurate contour identification for isolating car shapes, and a comprehensive understanding of vehicle geometries through advanced visualization techniques.
+</div>
 <br>
 <br>
 
 
 ## II. Introduction
+
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This project is part of the MeXE 402 - Mechatronics Engineering Elective 2: Data Science and Machine Learning course final exam.
-- **Goal of the Project:** The primary goal of this project is to extract contours from car images and perform a detailed analysis of the identified shapes using OpenCV tools. This process not only improves understanding of image processing techniques but also provides practical applications in real-world scenarios, such as vehicle recognition and structural analysis.
+- **Goal of the Project:**
+    - The primary goal of this project is to extract contours from car images and perform a detailed analysis of the identified shapes using OpenCV tools. This process not only improves understanding of image processing techniques but also provides practical applications in real-world scenarios, such as vehicle recognition and structural analysis.
 - **Overview of OpenCV:**
     - OpenCV (Open Source Computer Vision Library) is an open-source library of programming functions primarily aimed at real-time computer vision tasks.
     - It provides a comprehensive suite of tools for image and video analysis, including object detection, image segmentation, and feature extraction.
@@ -47,6 +50,7 @@
 
 
 ## III. Project Methods
+
 - **Dataset Preparation:**
     - Collect a dataset of car images from reliable online sources.
     - Preprocess the images by resizing, normalizing, and converting them to grayscale for consistency.
@@ -59,12 +63,13 @@
 - **Visualization:**
     - Overlay the detected contours on the original images for visual representation.
     - Display the results using OpenCV's `imshow` function or save the processed images for documentation.
-  
+
 <br>
 <br>
 
 
 ## IV. Conclusion
+
 - This project demonstrated the application of contour detection techniques in analyzing car images.
 - Key findings include:
     - Effective preprocessing significantly enhances contour detection accuracy.
@@ -852,8 +857,10 @@
     from IPython.display import clear_output
     clear_output()
     ```
+
+    
 13. **Extracting Contours for Shape Analysis**
-    - Use contour detection to analyze and outline geometric shapes in hand-drawn images.
+    
     ```python
     import cv2
     from google.colab.patches import cv2_imshow
