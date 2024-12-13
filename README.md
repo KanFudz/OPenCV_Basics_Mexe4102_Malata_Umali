@@ -71,8 +71,10 @@
     - Challenges such as noisy backgrounds and inconsistent lighting were addressed through robust image preprocessing techniques.
     - The extracted contours provide valuable insights into the structural features of vehicles, supporting applications like automated vehicle recognition.
 - Challenges faced:
+    - Finding the appropriate dataset for the project.
     - Variability in image quality and lighting conditions.
     - Fine-tuning the edge detection thresholds for optimal results.
+    - Being limited by the google colab in running programs that require compute units or GPU.
 - Outcomes:
     - Successfully extracted and analyzed contours from car images.
     - Highlighted the importance of preprocessing in achieving high-quality results.
