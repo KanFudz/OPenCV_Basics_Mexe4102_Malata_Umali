@@ -1,4 +1,4 @@
-<h1 align="center">Extracting Contours From Hand-drawn Drawings For Shape Analysis</h1>
+<h1 align="center">Extracting Contours for Shape Analysis in Car Images</h1>
 <h2 align="center">Final Requirement: Basic Open CV</h2>
 <h3 align="center">MExEE 402 - MExE Elective 2</h3>
 <br>
@@ -24,12 +24,19 @@
 
 ## II. Introduction
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This project is part of the MeXE 402 - Mechatronics Engineering Elective 2: Data Science and Machine Learning course final exam.
-- **Goal of the Project:** The primary goal of this project is to extract contours from hand-drawn images and perform a detailed analysis of the identified shapes using OpenCV tools. This process not only improves understanding of image processing techniques but also provides practical applications in real-world scenarios.
-- **Overview of OpenCV:** OpenCV (Open Source Computer Vision Library) is an open-source library of programming functions primarily aimed at real-time computer vision tasks. It provides a comprehensive suite of tools for image and video analysis, including object detection, image segmentation, and feature extraction.
-- **Significance of Shape Analysis:** Shape analysis is a fundamental problem in computer vision, with diverse applications such as object recognition, image segmentation, and graphics processing. Understanding shapes enables machines to interpret visual data effectively, making it crucial in areas like autonomous systems and digital graphics.
-- **Objective of the Project:**
-    - To address the challenges of extracting contours from hand-drawn images using OpenCV’s robust contour detection techniques.
-    - To apply these techniques to a curated dataset of hand-drawn images, isolating and analyzing contours to derive meaningful insights about the shapes present.
+- **Goal of the Project:** The primary goal of this project is to extract contours from car images and perform a detailed analysis of the identified shapes using OpenCV tools. This process not only improves understanding of image processing techniques but also provides practical applications in real-world scenarios, such as vehicle recognition and structural analysis.
+- **Overview of OpenCV:**
+    - OpenCV (Open Source Computer Vision Library) is an open-source library of programming functions primarily aimed at real-time computer vision tasks.
+    - It provides a comprehensive suite of tools for image and video analysis, including object detection, image segmentation, and feature extraction.
+- **Significance of Shape Analysis**
+    - Shape analysis is a fundamental problem in computer vision, with diverse applications such as object recognition, image segmentation, and graphics processing.
+    - Understanding shapes enables machines to interpret visual data effectively, making it crucial in areas like autonomous systems and digital graphics.
+- **Contour Detection in Car Images**
+    - Shape analysis plays a critical role in computer vision, enabling the understanding and classification of objects based on their geometric features.
+    - Contour extraction is a fundamental technique used to identify and analyze object boundaries with precision.
+    - This project specifically focuses on car images, where detecting and analyzing contours can provide detailed insights into the unique shapes, dimensions, and structural features of vehicles.
+    - Contour detection allows for applications such as vehicle recognition, shape classification, and segmentation, which are essential in fields like automated driving systems, traffic management, and design analysis.
+    - By leveraging OpenCV's capabilities, this project highlights the importance of effective pre-processing and detection techniques in overcoming challenges such as noisy backgrounds and varied lighting conditions.
 
 <br>
 <br>
